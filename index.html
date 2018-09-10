@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>annoying orange</title>
+		<style>
+			* {margin:0; padding:0;}
+			section {background:url("background.jpg") 50% 50% no-repeat;
+					 width:100%;
+					 height:100vh;}
+			img {width:120px; 
+				 position:absolute; left:50%; top:60%;
+				 transform:translateX(-50%) translateY(-50%);
+				 cursor:pointer;}
+			#one {z-index:1;}
+			
+			
+		</style>
+	</head>
+	<script>
+		var i = 0;
+		function a(){
+			i += 1;
+			if(i%2==0){
+				one.style.opacity = 1;
+				two.style.opacity = 0;
+				annoying.currentTime = 0;
+				annoying.pause();
+			}else if(i%2==1){
+				one.style.opacity = 0;
+				two.style.opacity = 1;
+				annoying.play();
+			}
+		}
+		
+	</script>
+	<body>
+		<audio id="annoying" src="annoying.mp3" autoplay="" loop="" preload="auto"></audio>
+		<section>
+			<img id="one" src="1.png" onclick="a()"/>
+			<img id="two" src="2.png"/>
+			
+		</section>
+	</body>
+</html>
